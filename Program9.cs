@@ -32,10 +32,10 @@ namespace array
                 Console.WriteLine("Тест отрисовки Healthbar и Manabar для двух оппонентов");
                 Console.WriteLine("Продолжить?\n" +
                     "Нажмите любую клавишу, чтобы задать случайные значения для Healthbar и Manabar обоих оппонентов\n" +
-                    "Нажмите: 1 - для выхода из программы");
+                    "Нажмите: Escape - для выхода из программы");
 
                 ConsoleKeyInfo key = Console.ReadKey(true);
-                if (key.KeyChar == '1')
+                if (key.Key == ConsoleKey.Escape)
                 {
                     testIsContinue = false;
                     Console.Clear();
