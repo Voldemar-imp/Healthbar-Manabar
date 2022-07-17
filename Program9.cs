@@ -17,6 +17,7 @@ namespace array
             Random random = new Random();
 
             Console.CursorVisible = false;
+            
             while (true)
             {
                 Console.SetCursorPosition(0, 0);
