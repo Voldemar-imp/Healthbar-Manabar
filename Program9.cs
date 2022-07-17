@@ -29,20 +29,6 @@ namespace array
             
             while (testIsContinue)
             {
-                Console.SetCursorPosition(0, 0);
-                Console.WriteLine("Тест отрисовки Healthbar и Manabar для двух оппонентов");
-                Console.WriteLine("Продолжить?\n" +
-                    "Нажмите любую клавишу, чтобы задать случайные значения для Healthbar и Manabar обоих оппонентов\n" +
-                    "Нажмите: Escape - для выхода из программы");
-                ConsoleKeyInfo key = Console.ReadKey(true);
-                
-                if (key.Key == ConsoleKey.Escape)
-                {
-                    testIsContinue = false;
-                    Console.Clear();
-                    break;
-                }
-
                 heroHealth = random.Next(heroHealthMax+1);
                 heroMana = random.Next(heroManaMax + 1);
                 enemyHealth = random.Next(enemyHealthMax+1);
@@ -50,7 +36,20 @@ namespace array
                 DrawBar(heroHealth, heroHealthMax, ConsoleColor.Red, heroBarPositionX, heroBarPositionY, '$');
                 DrawBar(heroMana, heroManaMax, ConsoleColor.Blue, heroBarPositionX, heroBarPositionY+1, '.');
                 DrawBar(enemyHealth, enemyHealthMax, ConsoleColor.Green, enemyBarPositionX, enemyBarPositionY, '&');
-                DrawBar(enemyMana, enemyManaMax, ConsoleColor.DarkCyan, enemyBarPositionX, enemyBarPositionY +1, '?');              
+                DrawBar(enemyMana, enemyManaMax, ConsoleColor.DarkCyan, enemyBarPositionX, enemyBarPositionY +1, '?');
+
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("Тест отрисовки Healthbar и Manabar для двух оппонентов");
+                Console.WriteLine("Продолжить?\n" +
+                    "Нажмите любую клавишу, чтобы задать новые случайные значения для Healthbar и Manabar обоих оппонентов\n" +
+                    "Нажмите: Escape - для выхода из программы");
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.Escape)
+                {
+                    testIsContinue = false;
+                    Console.Clear();
+                }             
             }
 
         }
