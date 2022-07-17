@@ -10,17 +10,38 @@ namespace array
     {
         static void Main(string[] args)
         {
-            int heroHealth, heroHealthMax = 10, enemyHealth, enemyHealthMax = 10;
-            int heroMana, heroManaMax = 10, enemyMana, enemyManaMax = 10;
-            int heroBarPositionX = 2, heroBarPositionY = 27;
-            int enemyBarPositionX = 106, enemyBarPositionY = 27;
+            int heroHealth;
+            int heroHealthMax = 10;
+            int enemyHealth;
+            int enemyHealthMax = 10;
+            int heroMana;
+            int heroManaMax = 10;
+            int enemyMana;
+            int enemyManaMax = 10;
+            int heroBarPositionX = 2;
+            int heroBarPositionY = 27;
+            int enemyBarPositionX = 106;
+            int enemyBarPositionY = 27;
+            bool testIsContinue = true; 
             Random random = new Random();
 
             Console.CursorVisible = false;
-            
-            while (true)
+            while (testIsContinue)
             {
+                Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Тест отрисовки Healthbar и Manabar для двух оппонентов");
+                Console.WriteLine("Продолжить?\n" +
+                    "Нажмите любую клавишу, чтобы задать случайные значения для Healthbar и Manabar обоих оппонентов\n" +
+                    "Нажмите: 1 - для выхода из программы");
+
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                if (key.KeyChar == '1')
+                {
+                    testIsContinue = false;
+                    Console.Clear();
+                    break;
+                }
+
                 heroHealth = random.Next(heroHealthMax+1);
                 heroMana = random.Next(heroManaMax + 1);
                 enemyHealth = random.Next(enemyHealthMax+1);
@@ -28,10 +49,9 @@ namespace array
                 DrawBar(heroHealth, heroHealthMax, ConsoleColor.Red, heroBarPositionX, heroBarPositionY, '$');
                 DrawBar(heroMana, heroManaMax, ConsoleColor.Blue, heroBarPositionX, heroBarPositionY+1, '.');
                 DrawBar(enemyHealth, enemyHealthMax, ConsoleColor.Green, enemyBarPositionX, enemyBarPositionY, '&');
-                DrawBar(enemyMana, enemyManaMax, ConsoleColor.DarkCyan, enemyBarPositionX, enemyBarPositionY +1, '?');
-                Console.ReadKey();
-                Console.Clear();
+                DrawBar(enemyMana, enemyManaMax, ConsoleColor.DarkCyan, enemyBarPositionX, enemyBarPositionY +1, '?');              
             }
+
         }
 
         static void DrawBar(int value, int maxValue, ConsoleColor color, int positionX, int pozitonY, char simbol = ' ')
