@@ -26,6 +26,7 @@ namespace array
             Random random = new Random();
 
             Console.CursorVisible = false;
+            
             while (testIsContinue)
             {
                 Console.SetCursorPosition(0, 0);
@@ -33,8 +34,8 @@ namespace array
                 Console.WriteLine("Продолжить?\n" +
                     "Нажмите любую клавишу, чтобы задать случайные значения для Healthbar и Manabar обоих оппонентов\n" +
                     "Нажмите: Escape - для выхода из программы");
-
                 ConsoleKeyInfo key = Console.ReadKey(true);
+                
                 if (key.Key == ConsoleKey.Escape)
                 {
                     testIsContinue = false;
