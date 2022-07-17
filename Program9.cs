@@ -51,7 +51,6 @@ namespace array
                     Console.Clear();
                 }             
             }
-
         }
 
         static void DrawBar(int value, int maxValue, ConsoleColor color, int positionX, int pozitonY, char simbol = ' ')
