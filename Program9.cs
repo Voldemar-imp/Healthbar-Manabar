@@ -20,7 +20,6 @@ namespace array
             
             while (true)
             {
-                Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Тест отрисовки Healthbar и Manabar для двух оппонентов");
                 heroHealth = random.Next(heroHealthMax+1);
                 heroMana = random.Next(heroManaMax + 1);
